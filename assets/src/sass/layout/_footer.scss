@@ -1,0 +1,24 @@
+.main-footer{
+    margin-top: 1rem;
+    // Footer Slider Gallery
+    &__slide-gallery{
+        width: 100%;
+        overflow:hidden;
+        margin-bottom: 1rem;
+        .swiper-wrapper{
+        width: 40%;
+            .swiper-slide {
+                background-position: center;
+                background-size: cover;
+                height: 40vh;
+            }
+        }
+    }
+}
+
+@include media(">phone", "<=desktop") {
+    
+}
+@include media(">desktop") {
+
+}

@@ -1,0 +1,245 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+/////// MOBILE NAVBAR /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+#mobileNavbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding-top: 1rem;
+  // width: 200vw;
+  // height: 200vw;
+  .animation {
+    transition: all 0.4s ease;
+  }
+  .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100px;
+    width: 100px;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .logo-container {
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 75px;
+    height: 75px;
+    padding: 1rem;
+    img{
+      max-width: 4em;
+    }
+  }
+  .overlay {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    flex-direction: column;
+    transform: scale(0);
+    position: absolute;
+    .btn-close {
+      z-index: 3;
+      right: 2rem;
+      top: 1.5rem;
+      position: absolute;
+      font-size: 2rem;
+      color: $red;
+      margin: 0;
+    }
+  }
+
+  .navbar-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    .navbar-content__linklist {
+      padding: 0;
+      text-align: center;
+      color: white;
+      max-width: 90vw;
+      max-height: 100vh;
+      opacity: 0;
+      transition: opacity;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      list-style: none;
+      .nav-item {
+        a {
+          padding: 0;
+          color: $white;  
+        }
+        .dropdown-menu {
+          position: static !important;
+          background-color: transparent !important;
+          &.show {
+            transform: none !important;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 1rem;
+          }
+          .dropdown-item {
+            font-size: inherit;
+            font-weight: normal;
+            padding: 0.4rem 0;
+            color: $white;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: $green-1;
+          }
+        }
+      }
+    }
+  }
+
+  .toggler:checked + .animation > .logo-container {
+    transform: rotateY(360deg);
+  }
+
+  .toggler:checked ~ .navbar-content {
+    visibility: visible;
+  }
+
+  .toggler:checked ~ .navbar-content > div {
+    transform: scale(1);
+    transition-duration: 0.75s;
+  }
+
+  .toggler:checked ~ .navbar-content > div > .navbar-content__linklist {
+    opacity: 1 !important;
+    transition: opacity 0.4s ease 0.4s;
+  }
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+/////// DESKTOP NAVBAR /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+#desktopNavbar {
+  display: none;
+}
+
+@include media(">tablet") {
+    #mobileNavbar {
+        display: none !important;
+    }
+    #desktopNavbar {
+        display: flex !important;
+        padding: 1rem 0rem;
+        width: 80vw;
+        margin: auto;
+        a.logo-container{
+          img{
+            max-width: 4em;
+          }
+        }
+        .navbar-content{
+          width: 100%;
+          &__linklist{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 0;
+            width: 90%;
+            margin: auto;
+            .nav-item{
+              a.nav-link{
+                color: $white;
+                text-transform: uppercase;
+                transition: color .4s;
+                &:hover{
+                  text-decoration: underline;
+                  text-underline-offset: 4px;
+                  text-decoration-color: $green-1;
+                }
+              }
+              &:hover{
+                a{
+                  color: $green-1;
+                }
+              }
+            }
+          }
+        }
+      }
+      .nav-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+      .dropdown-menu {
+        padding: 0;
+        border-radius: 0;
+        border: none;
+        .dropdown-item {
+          font-weight: 700;
+          font-size: .8rem;
+          min-width: 8rem;
+          color: $green-1;
+          transform: none;
+          padding: 1rem 1.5rem;
+          transition: background-color .3s;
+          &:hover{
+            background-color: $green-1;
+            color: $white !important;
+          }
+        }
+        .dropdown-item:not(:last-child) {
+          border-bottom: 1px solid $green-1;
+        }
+      }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+/////// COMMON STYLES /////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+.search-link {
+  display: inline-flex;
+  .search-icon {
+    font-size: 1.4rem;
+    align-self: center;
+    margin-left: 1rem;
+  }
+}
+
+.header-button{
+  border: 3px solid $green-1;
+  background-color: $green-1;
+  font-size: .8rem;
+  color: $white;
+  padding: .6rem .7rem;
+  display: block;
+  &.hvr-fade:hover, &.hvr-fade:focus, &.hvr-fade:active{
+    background-color: $white;
+    color: $green-1 !important;
+    text-decoration: none !important;
+    border: 3px solid $green-1;
+  }
+}

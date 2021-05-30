@@ -1,0 +1,32 @@
+body {
+    background-color: $black;
+    color: $white;
+    line-height: normal;
+    margin: 0;
+    font-family: $body-font;
+    position: relative;
+}
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+  font-family: $headings-font !important;
+  line-height: normal;
+  margin: 0;
+}
+
+/* Document level adjustments */
+html {
+  font-size: 13px !important;
+}
+@include media(">1500px") {
+  html { font-size: 25px !important;  }
+}
+@include media(">desktop", "<=1500px") {
+  html { font-size: 16px !important;  }
+}
+@include media(">tablet", "<=desktop") {
+  html { font-size: 15px !important; }
+}
+@include media(">phone", "<=tablet") {
+  html { font-size: 14px !important; }
+}

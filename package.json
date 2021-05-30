@@ -1,0 +1,47 @@
+{
+  "name": "HammersportMarketing",
+  "version": "1.0.0",
+  "description": "Hammersportmarketing theme packages",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
+    "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
+    "clean": "rm -rf build/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HammerSport-Marketing/Phase4-WordpressTheme.git"
+  },
+  "keywords": [],
+  "author": "Frank Ponte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HammerSport-Marketing/Phase4-WordpressTheme/issues"
+  },
+  "homepage": "https://github.com/HammerSport-Marketing/Phase4-WordpressTheme#readme",
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.4",
+    "cssnano": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^1.5.0",
+    "node-sass": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
+    "sass-mq": "^5.0.1",
+    "style-loader": "^2.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.34.0",
+    "webpack-cli": "^4.6.0"
+  }
+}

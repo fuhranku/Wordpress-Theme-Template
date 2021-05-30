@@ -1,0 +1,24 @@
+/* Folder system based in this article: 
+ * https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4
+ * main.scss: Only contains our imports.
+ * Developed by: Frank Ponte for HammerSport Marketing. 2021.
+ * This project has a MoFi (Mobile First) Approach. 
+ * All media queries have been written for '> phone' breakpoints
+*/
+
+// Vendors-extensions
+// Vendor Imports
+// Library to easily handle media queries 
+// https://github.com/eduardoboucas/include-media
+
+// Application imports
+    // Utils
+@import "../library/fonts/fonts.css";
+    // Theme
+    // Layout
+
+
+body{
+    background: red !important;
+    font-family: 'Lato', sans-serif;
+}
