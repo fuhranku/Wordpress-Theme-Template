@@ -11,14 +11,13 @@
 // Library to easily handle media queries 
 // https://github.com/eduardoboucas/include-media
 
+// Vendors-extensions
+@import "/node_modules/include-media/dist/include-media";
+// Library to easily handle media queries 
+// https://github.com/eduardoboucas/include-media
+
 // Application imports
-    // Utils
-@import "../library/fonts/fonts.css";
-    // Theme
-    // Layout
-
-
-body{
-    background: red !important;
-    font-family: 'Lato', sans-serif;
-}
+@import "./vendors-extensions/include-media";
+@import "./utils/imports";
+@import "./theme/imports";
+@import "./layout/imports";

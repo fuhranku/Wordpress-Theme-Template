@@ -1,0 +1,12 @@
+/**  
+ * Vendor imports for the theme
+ */
+
+ @import "/node_modules/include-media/dist/include-media";
+ @import "./vendors-extensions/include-media";
+ 
+ // Theme imports
+ @import "~swiper/swiper-bundle.css";
+ @import "~intl-tel-input/build/css/intlTelInput.css";
+ @import "~awesome-notifications/dist/style.css";
+ @import "~@fortawesome/fontawesome-free/css/all.min.css";
